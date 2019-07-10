@@ -8280,6 +8280,9 @@ body {
   @media (max-width: 1200px) {
     #home {
       padding: 280px 0 108px; } }
+  @media (max-width: 590px) {
+    #home {
+      padding: 280px 0 0; } }
   #home a {
     cursor: pointer;
     text-decoration: none; }
@@ -8332,10 +8335,15 @@ body {
       .wrapper .home__line {
         top: -135.5%;
         left: 27.5%; } }
-    @media (max-width: 525px) {
+    @media (max-width: 590px) {
       .wrapper .home__line {
-        top: -268.5%;
-        left: 5.5%; } }
+        top: -125%;
+        left: 33%; } }
+    .wrapper .home__line img {
+      width: 254px; }
+      @media (max-width: 590px) {
+        .wrapper .home__line img {
+          width: 145px; } }
 
 .home__title {
   text-transform: uppercase;
@@ -8351,7 +8359,7 @@ body {
   @media (max-width: 1200px) {
     .home__title {
       font-size: 64px; } }
-  @media (max-width: 525px) {
+  @media (max-width: 590px) {
     .home__title {
       font-size: 32px;
       padding-bottom: 20px; } }
@@ -8382,7 +8390,8 @@ body {
       margin-left: 0; } }
   @media (max-width: 590px) {
     .list {
-      padding-top: 300px; } }
+      padding-top: 225px;
+      padding-bottom: 0; } }
   .list--item {
     text-transform: uppercase;
     font-family: 'Proxima Nova';
@@ -8397,6 +8406,9 @@ body {
     @media (max-width: 860px) {
       .list--item {
         margin-left: 20px; } }
+    @media (max-width: 590px) {
+      .list--item {
+        font-size: 12px; } }
     .list--item a {
       color: #9071e9;
       text-decoration: none;
@@ -8407,17 +8419,34 @@ body {
 .app-store {
   background-color: #5e42b0;
   position: relative;
-  max-width: 235px;
+  width: 235px;
   left: 65px;
   z-index: 2;
   box-shadow: 5px 5px 5px 5px #111820; }
   @media (max-width: 1570px) {
     .app-store {
       left: 0; } }
+  @media (max-width: 1120px) {
+    .app-store {
+      left: -31%; } }
+  @media (max-width: 991px) {
+    .app-store {
+      left: 15%; } }
+  @media (max-width: 768px) {
+    .app-store {
+      top: -100px;
+      left: 65%; } }
   @media (max-width: 590px) {
     .app-store {
-      top: -300px;
-      left: 10px; } }
+      top: -200px;
+      left: 10%;
+      max-width: 110px; } }
+  @media (max-width: 400px) {
+    .app-store {
+      left: 7%; } }
+  @media (max-width: 340px) {
+    .app-store {
+      left: 5%; } }
   .app-store:hover {
     opacity: .8; }
   .app-store::after {
@@ -8430,6 +8459,11 @@ body {
     border-radius: 50%;
     background-color: #5e42b0;
     z-index: -1; }
+    @media (max-width: 590px) {
+      .app-store::after {
+        width: 40px;
+        height: 40px;
+        left: -19px; } }
   .app-store::before {
     content: '';
     position: absolute;
@@ -8440,6 +8474,11 @@ body {
     border-radius: 50%;
     background-color: #5e42b0;
     z-index: -1; }
+    @media (max-width: 590px) {
+      .app-store::before {
+        width: 40px;
+        height: 40px;
+        right: -20px; } }
   .app-store__icon {
     display: -webkit-flex;
     display: flex;
@@ -8450,9 +8489,15 @@ body {
     position: relative;
     z-index: 1;
     left: 7px; }
+    @media (max-width: 590px) {
+      .app-store__icon {
+        left: 1px; } }
     .app-store__icon img {
       width: 30px;
       margin-top: -5px; }
+      @media (max-width: 590px) {
+        .app-store__icon img {
+          width: 17px; } }
   .app-store__text {
     display: -webkit-flex;
     display: flex;
@@ -8464,6 +8509,9 @@ body {
     text-transform: uppercase;
     position: relative;
     left: 40px; }
+    @media (max-width: 590px) {
+      .app-store__text {
+        left: 7px; } }
     .app-store__text p {
       margin: 0;
       font-family: 'Proxima Nova';
@@ -8472,20 +8520,57 @@ body {
       padding-top: 20px;
       margin-bottom: -2px;
       letter-spacing: 0.6px; }
+      @media (max-width: 590px) {
+        .app-store__text p {
+          font-size: 8px;
+          padding-top: 11px; } }
     .app-store__text h3 {
       margin: 0;
       font-family: 'Proxima Nova';
       font-weight: 600;
       font-size: 14px;
       padding-bottom: 24px; }
+      @media (max-width: 590px) {
+        .app-store__text h3 {
+          font-size: 8px;
+          padding-bottom: 10px; } }
 
 .google-play {
   background-color: #5e42b0;
   position: relative;
-  max-width: 235px;
+  width: 235px;
   margin-left: 44px;
   z-index: 2;
   box-shadow: 5px 5px 5px 5px #111820; }
+  @media (max-width: 1120px) {
+    .google-play {
+      left: 30%; } }
+  @media (max-width: 991px) {
+    .google-play {
+      left: 15%; } }
+  @media (max-width: 840px) {
+    .google-play {
+      left: 5%; } }
+  @media (max-width: 768px) {
+    .google-play {
+      left: -58%; } }
+  @media (min-width: 590px) and (max-width: 680px) {
+    .google-play {
+      left: -61%; } }
+  @media (max-width: 590px) {
+    .google-play {
+      top: -200px;
+      left: 10%;
+      max-width: 110px; } }
+  @media (max-width: 500px) {
+    .google-play {
+      left: 5%; } }
+  @media (max-width: 420px) {
+    .google-play {
+      left: -10%; } }
+  @media (max-width: 360px) {
+    .google-play {
+      left: -30%; } }
   .google-play:hover {
     opacity: .8; }
   .google-play::after {
@@ -8498,6 +8583,11 @@ body {
     border-radius: 50%;
     background-color: #5e42b0;
     z-index: -1; }
+    @media (max-width: 590px) {
+      .google-play::after {
+        width: 40px;
+        height: 40px;
+        left: -19px; } }
   .google-play::before {
     content: '';
     position: absolute;
@@ -8508,6 +8598,11 @@ body {
     border-radius: 50%;
     background-color: #5e42b0;
     z-index: -1; }
+    @media (max-width: 590px) {
+      .google-play::before {
+        width: 40px;
+        height: 40px;
+        right: -20px; } }
   .google-play__icon {
     display: -webkit-flex;
     display: flex;
@@ -8518,9 +8613,15 @@ body {
     position: relative;
     z-index: 1;
     left: 2px; }
+    @media (max-width: 590px) {
+      .google-play__icon {
+        left: 1px; } }
     .google-play__icon img {
       width: 34px;
       margin-top: -2px; }
+      @media (max-width: 590px) {
+        .google-play__icon img {
+          width: 17px; } }
   .google-play__text {
     display: -webkit-flex;
     display: flex;
@@ -8533,6 +8634,9 @@ body {
     position: relative;
     right: 20px;
     letter-spacing: 0.5px; }
+    @media (max-width: 590px) {
+      .google-play__text {
+        right: 2px; } }
     .google-play__text p {
       margin: 0;
       font-family: 'Proxima Nova';
@@ -8540,12 +8644,20 @@ body {
       font-size: 14px;
       padding-top: 20px;
       margin-bottom: -2px; }
+      @media (max-width: 590px) {
+        .google-play__text p {
+          font-size: 8px;
+          padding-top: 11px; } }
     .google-play__text h3 {
       margin: 0;
       font-family: 'Proxima Nova';
       font-weight: 600;
       font-size: 14px;
       padding-bottom: 22px; }
+      @media (max-width: 590px) {
+        .google-play__text h3 {
+          font-size: 8px;
+          padding-bottom: 10px; } }
 
 .athletes {
   position: relative;
