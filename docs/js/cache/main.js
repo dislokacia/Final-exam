@@ -164,15 +164,15 @@ $(".menuitem").click(function () {
 $("html, body").scroll(function () {
   var st = $(this).scrollTop();
   $(".athletes-img").css("transform", "translate(0%, " + st / 300 + "%");
-  $(".athletes-line").css("transform", "translate(0%, " + st / 300 + "%");
-  $(".athletes-darkplus").css("transform", "translate(0%, " + st / 100 + "%");
-  $(".athletes-lightplus").css("transform", "translate(0%, " + st / 150 + "%");
+  $(".athletes-line").css("transform", "translate(0%, " + st / 50 + "%");
+  $(".athletes-darkplus").css("transform", "translate(0%, " + st / 20 + "%");
+  $(".athletes-lightplus").css("transform", "translate(0%, " + st / 20 + "%");
   $(".players-img").css("transform", "translate(0%, " + st / 300 + "%");
-  $(".players-line").css("transform", "translate(0%, " + st / 300 + "%");
-  $(".players-line2").css("transform", "translate(0%, " + st / 300 + "%");
-  $(".players-darkplus").css("transform", "translate(0%, " + st / 100 + "%");
-  $(".players-darkplus2").css("transform", "translate(0%, " + st / 100 + "%");
-  $(".players-lightplus").css("transform", "translate(0%, " + st / 150 + "%");
+  $(".players-line").css("transform", "translate(0%, " + st / 40 + "%");
+  $(".players-line2").css("transform", "translate(0%, " + st / 20 + "%");
+  $(".players-darkplus").css("transform", "translate(0%, " + st / 20 + "%");
+  $(".players-darkplus2").css("transform", "translate(0%, " + st / 20 + "%");
+  $(".players-lightplus").css("transform", "translate(0%, " + st / 30 + "%");
 });
 !function () {
   "use strict";
@@ -217,3 +217,12 @@ $("html, body").scroll(function () {
     });
   });
 }();
+$(".slick").slick({
+  arrows: false,
+  dots: true,
+  appendDots: $('.active'),
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  slide: ".slide"
+});

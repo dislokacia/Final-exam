@@ -8677,19 +8677,79 @@ body {
         left: -10%; } }
     @media (max-width: 1225px) {
       .athletes-img {
-        left: -13%;
-        top: 10%;
+        left: -15%;
+        top: 3%; } }
+    @media (max-width: 1090px) {
+      .athletes-img {
+        left: -20%; } }
+    @media (max-width: 990px) {
+      .athletes-img {
+        left: -25%; } }
+    @media (max-width: 920px) {
+      .athletes-img {
+        left: -30%; } }
+    @media (max-width: 850px) {
+      .athletes-img {
+        left: -39%; } }
+    @media (max-width: 800px) {
+      .athletes-img {
+        left: -42%; } }
+    @media (max-width: 768px) {
+      .athletes-img {
+        left: 18%;
+        top: 17%;
         height: 699px; } }
+    @media (max-width: 500px) {
+      .athletes-img {
+        left: 15%;
+        top: 12%;
+        height: 480px; } }
+    @media (max-width: 350px) {
+      .athletes-img {
+        left: 5%; } }
   .athletes-line {
     position: absolute;
     z-index: 1;
     top: 4.4%;
     left: 15.8%;
     height: 668px;
-    width: 582px; }
-    @media (min-width: 1510px) and (max-width: 1800px) {
+    max-width: 582px; }
+    @media (min-width: 1511px) and (max-width: 1800px) {
       .athletes-line {
-        left: 0.8%; } }
+        left: 8%;
+        top: 0%; } }
+    @media (max-width: 1511px) {
+      .athletes-line {
+        left: -10%;
+        top: 2%; } }
+    @media (max-width: 1225px) {
+      .athletes-line {
+        left: -8%; } }
+    @media (max-width: 1090px) {
+      .athletes-line {
+        left: -15%; } }
+    @media (max-width: 990px) {
+      .athletes-line {
+        left: -20%; } }
+    @media (max-width: 920px) {
+      .athletes-line {
+        left: -25%; } }
+    @media (max-width: 850px) {
+      .athletes-line {
+        left: -32%; } }
+    @media (max-width: 800px) {
+      .athletes-line {
+        left: -35%; } }
+    @media (max-width: 768px) {
+      .athletes-line {
+        left: 26%;
+        top: 18%;
+        height: 398px; } }
+    @media (max-width: 500px) {
+      .athletes-line {
+        left: 28%;
+        top: 17%;
+        height: 201px; } }
   .athletes-darkplus {
     position: absolute;
     z-index: 1;
@@ -8700,6 +8760,14 @@ body {
     @media (min-width: 1510px) and (max-width: 1800px) {
       .athletes-darkplus {
         left: 5.5%; } }
+    @media (max-width: 768px) {
+      .athletes-darkplus {
+        top: 26.5%;
+        left: 23.5%; } }
+    @media (max-width: 500px) {
+      .athletes-darkplus {
+        top: 18.5%;
+        left: 23.5%; } }
   .athletes-lightplus {
     position: absolute;
     z-index: 1;
@@ -8710,18 +8778,45 @@ body {
     @media (min-width: 1510px) and (max-width: 1800px) {
       .athletes-lightplus {
         left: 4.4%; } }
+    @media (max-width: 768px) {
+      .athletes-lightplus {
+        top: 24.5%;
+        left: 18.4%; } }
+    @media (max-width: 500px) {
+      .athletes-lightplus {
+        top: 16.5%;
+        left: 16.4%; } }
   .athletes-wrap {
     position: relative;
-    left: 50%; }
+    left: 50%;
+    width: 745px; }
+    .athletes-wrap-bot {
+      width: 725px; }
+      @media (max-width: 695px) {
+        .athletes-wrap-bot {
+          width: 430px; } }
     @media (min-width: 1225px) and (max-width: 1511px) {
       .athletes-wrap {
         left: 38%; } }
-    @media (max-width: 1226px) {
+    @media (max-width: 1225px) {
       .athletes-wrap {
-        left: 20%; } }
+        left: 40%;
+        width: 500px; } }
+    @media (max-width: 850px) {
+      .athletes-wrap {
+        left: 35%; } }
+    @media (max-width: 768px) {
+      .athletes-wrap {
+        left: 30%; } }
+    @media (max-width: 695px) {
+      .athletes-wrap {
+        width: 430px; } }
   .athletes-art {
     position: relative;
     width: 100%; }
+    @media (max-width: 768px) {
+      .athletes-art {
+        display: none; } }
   .athletes-top {
     background-color: #fff; }
     .athletes-top__head {
@@ -8766,6 +8861,9 @@ body {
       letter-spacing: 1px;
       padding-bottom: 56px;
       margin-bottom: 0; }
+      @media (max-width: 768px) {
+        .athletes-top__text {
+          font-size: 18px; } }
   .athletes-mid {
     background-color: #f6f4fa; }
     .athletes-mid__conn {
@@ -8804,6 +8902,9 @@ body {
       line-height: 1.4;
       padding-bottom: 59px;
       margin-bottom: 0; }
+      @media (max-width: 768px) {
+        .athletes-mid__text {
+          font-size: 18px; } }
   .athletes-bot {
     background-color: #5e42b0; }
     .athletes-bot__conn {
@@ -8842,6 +8943,119 @@ body {
       padding-bottom: 100px;
       line-height: 1.4;
       margin-bottom: 0; }
+      @media (max-width: 768px) {
+        .athletes-bot__text {
+          font-size: 18px; } }
+
+.under768 {
+  display: none; }
+  @media (max-width: 768px) {
+    .under768 {
+      display: block; } }
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: url(../img/dot-inactive.png);
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.slick-dots li.slick-active button:before {
+  content: url(../img/dot-active.png); }
+
+.slick-dots {
+  z-index: 3;
+  top: 335px; }
+  @media (max-width: 500px) {
+    .slick-dots {
+      top: 340px; } }
+
+.slider-cont {
+  top: 400px;
+  padding-bottom: 300px; }
+  @media (max-width: 500px) {
+    .slider-cont {
+      top: 250px; } }
+
+.slid {
+  top: -40px;
+  left: 5px;
+  position: relative; }
+  @media (max-width: 500px) {
+    .slid {
+      font-size: 50px; } }
+
+@media (max-width: 500px) {
+  .slide {
+    height: 400px; } }
+
+.slide-1 {
+  background-color: #f5f4f9;
+  padding: 118px 0; }
+  @media (max-width: 500px) {
+    .slide-1 {
+      padding: 54px 0; } }
+
+.slide-2 {
+  background-color: #f5f4f9;
+  padding: 60px 0 100px; }
+  @media (max-width: 500px) {
+    .slide-2 {
+      padding: 0px 0 4px; } }
+
+.slide-3 {
+  background-color: #9071e9;
+  padding: 42.5px 0; }
+  @media (max-width: 500px) {
+    .slide-3 {
+      padding: 9px 0 10px; } }
+
+.slide-title {
+  margin-top: 20px;
+  text-align: left; }
+  @media (max-width: 500px) {
+    .slide-title {
+      font-size: 28px; } }
+  .slide-title-1 {
+    margin-top: 60px; }
+    @media (max-width: 500px) {
+      .slide-title-1 {
+        margin-left: 35px; } }
+  .slide-title-2 {
+    margin-top: 60px; }
+    @media (max-width: 500px) {
+      .slide-title-2 {
+        margin-left: 35px;
+        letter-spacing: -1px; } }
+  .slide-title-3 {
+    margin-top: 60px; }
+    @media (max-width: 500px) {
+      .slide-title-3 {
+        margin-top: 20px;
+        margin-left: 35px; } }
+
+.slide-subtitle {
+  margin-top: 20px;
+  text-align: left; }
+  @media (max-width: 500px) {
+    .slide-subtitle-1 {
+      margin-left: 10px; } }
+  @media (max-width: 500px) {
+    .slide-subtitle-2 {
+      margin-left: 10px; } }
+  @media (max-width: 500px) {
+    .slide-subtitle-3 {
+      padding-bottom: 80px;
+      margin-left: 10px; } }
 
 .players {
   position: relative;
@@ -9258,9 +9472,12 @@ body {
 
 .map {
   min-width: 300px;
-  min-height: 350px;
+  min-height: 380px;
   width: 100%;
   height: 100%; }
+
+.field {
+  margin-bottom: 30px; }
 
 .header1 {
   background-color: #9071e9;
@@ -9269,7 +9486,8 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  padding: 15px 0; }
 
 .card1 {
   z-index: 2;
@@ -9351,6 +9569,9 @@ body {
     margin-left: 50px; }
   .footer-link {
     padding-top: 75px; }
+    .footer-link a:hover {
+      text-decoration: none;
+      color: #9071e9; }
   .footer__subtitle {
     color: #fff;
     font-size: 20px;
@@ -9359,6 +9580,9 @@ body {
     text-transform: capitalize;
     position: relative;
     z-index: 2; }
+    .footer__subtitle:hover {
+      text-decoration: none;
+      color: #9071e9; }
 
 .socials {
   margin-top: 67px;
@@ -9367,3 +9591,5 @@ body {
     color: #fff;
     margin-left: 36px;
     font-size: 26px; }
+    .socials__link:hover {
+      color: #9071e9; }

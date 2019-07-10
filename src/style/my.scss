@@ -699,6 +699,8 @@ body {
 
 //Section athletes
 
+
+
 .athletes {
   position: relative;
   width: 100%;
@@ -716,10 +718,41 @@ body {
       left: -10%;
     }
     @media (max-width: 1225px) {
-      left: -13%;
-      top: 10%;
+      left: -15%;
+      top: 3%;
+    }
+    @media (max-width: 1090px) {
+      left: -20%;
+    }
+    @media (max-width: 990px) {
+      left: -25%;
+    }
+    @media (max-width: 920px) {
+      left: -30%;
+    }
+    @media (max-width: 850px) {
+      left: -39%;
+    }
+    @media (max-width: 800px) {
+      left: -42%;
+    }
+    @media (max-width: 768px) {
+      left: 18%;
+      top: 17%;
       height: 699px;
     }
+    @media (max-width: 500px) {
+      left: 15%;
+      top: 12%;
+      height: 480px;
+    }
+    @media (max-width: 350px) {
+      left: 5%;
+      
+    }
+    // @media (max-width: 430px) {
+    //   left: -10%;
+    // }
   }
   &-line {
     position: absolute;
@@ -727,10 +760,50 @@ body {
     top: 4.4%;
     left: 15.8%;
     height: 668px;
-    width: 582px;
-    @media (min-width: 1510px) and (max-width: 1800px) {
-      left: 0.8%;
+    max-width: 582px;
+    @media (min-width: 1511px) and (max-width: 1800px) {
+      left: 8%;
+      top: 0%;
     }
+    @media (max-width: 1511px) {
+      left: -10%;
+      top: 2%;
+    }
+    @media (max-width: 1225px) {
+      left: -8%;
+    }
+    @media (max-width: 1090px) {
+      left: -15%;
+    }
+    @media (max-width: 990px) {
+      left: -20%;
+    }
+    @media (max-width: 920px) {
+      left: -25%;
+    }
+    @media (max-width: 850px) {
+      left: -32%;
+    }
+    @media (max-width: 800px) {
+      left: -35%;
+    }
+    @media (max-width: 768px) {
+      left: 26%;
+      top: 18%;
+      height: 398px;
+    }
+    @media (max-width: 500px) {
+      left: 28%;
+      top: 17%;
+      height: 201px;
+    }
+    // @media (max-width: 700px) {
+    //   left: 25%;
+    //   top: 7%;
+    // }
+    // @media (max-width: 630px) {
+    //   left: -29%;
+    // }
   }
   &-darkplus {
     position: absolute;
@@ -741,6 +814,14 @@ body {
     width: 17px;
     @media (min-width: 1510px) and (max-width: 1800px) {
       left: 5.5%;
+    }
+    @media (max-width: 768px) {
+      top: 26.5%;
+      left: 23.5%;
+    }
+    @media (max-width: 500px) {
+      top: 18.5%;
+      left: 23.5%;
     }
   }
   &-lightplus {
@@ -753,20 +834,48 @@ body {
     @media (min-width: 1510px) and (max-width: 1800px) {
       left: 4.4%;
     }
+    @media (max-width: 768px) {
+      top: 24.5%;
+      left: 18.4%;
+    }
+    @media (max-width: 500px) {
+      top: 16.5%;
+      left: 16.4%;
+    }
   }
   &-wrap {
     position: relative;
     left: 50%;
+    width: 745px;
+    &-bot {
+      width: 725px;
+      @media (max-width: 695px) {
+        width: 430px;
+      }
+    }
     @media (min-width: 1225px) and (max-width: 1511px) {
       left: 38%;
     }
-    @media (max-width: 1226px) {
-      left: 20%;
+    @media (max-width: 1225px) {
+      left: 40%;
+      width: 500px;
+    }
+    @media (max-width: 850px) {
+      left: 35%;
+    }
+    @media (max-width: 768px) {
+      left: 30%;
+    }
+    @media (max-width: 695px) {
+      width: 430px;
     }
   }
   &-art {
     position: relative;
     width: 100%;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   &-top {
     background-color: #fff;
@@ -816,6 +925,9 @@ body {
       letter-spacing: 1px;
       padding-bottom: 56px;
       margin-bottom: 0;
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
     }
   }
   &-mid {
@@ -859,6 +971,9 @@ body {
       line-height: 1.4;
       padding-bottom: 59px;
       margin-bottom: 0;
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
     }
   }
   &-bot {
@@ -902,9 +1017,139 @@ body {
       padding-bottom: 100px;
       line-height: 1.4;
       margin-bottom: 0;
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
     }
   }
 
+}
+
+.under768 {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: url(../img/dot-inactive.png);
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  content: url(../img/dot-active.png);
+}
+
+.slick-dots {
+  z-index: 3;
+  top: 335px;
+  @media (max-width: 500px) {
+    top: 340px;
+  }
+}
+
+.slider-cont {
+  top: 400px;
+  padding-bottom: 300px;
+  @media (max-width: 500px) {
+    top: 250px;
+  }
+}
+
+.slid {
+  top: -40px;
+  left: 5px;
+  position: relative;
+  @media (max-width: 500px) {
+    font-size: 50px;
+  }
+}
+
+.slide {
+  @media (max-width: 500px) {
+    height: 400px;
+  }
+  &-1 {
+    background-color: #f5f4f9;
+    padding: 118px 0;
+    @media (max-width: 500px) {
+      padding: 54px 0;
+    }
+  }
+  &-2 {
+    background-color: #f5f4f9;
+    padding: 60px 0 100px;
+    @media (max-width: 500px) {
+      padding: 0px 0 4px;
+    }
+  }
+  &-3 {
+    background-color: $lightviolet;
+    padding: 42.5px 0;
+    @media (max-width: 500px) {
+      padding: 9px 0 10px;
+    }
+  }
+  &-title {
+    margin-top: 20px;
+    text-align: left;
+    @media (max-width: 500px) {
+      font-size: 28px;
+    }
+    &-1 {
+      margin-top: 60px;
+      @media (max-width: 500px) {
+        margin-left: 35px;
+      }
+    }
+    &-2 {
+      margin-top: 60px;
+      @media (max-width: 500px) {
+        margin-left: 35px;
+        letter-spacing: -1px;
+      }
+    }
+    &-3 {
+      margin-top: 60px;
+      @media (max-width: 500px) {
+        margin-top: 20px;
+        margin-left: 35px;
+      }
+    }
+  }
+  &-subtitle {
+    margin-top: 20px;
+    text-align: left;
+    &-1 {
+      @media (max-width: 500px) {
+        margin-left: 10px;
+      }
+    }
+    &-2 {
+      @media (max-width: 500px) {
+        margin-left: 10px;
+      }
+    }
+    &-3 {
+      @media (max-width: 500px) {
+        padding-bottom: 80px;
+        margin-left: 10px;
+      }
+    }
+  }
 }
 
 // Section players
@@ -1388,9 +1633,13 @@ body {
 
 .map {
   min-width: 300px;
-  min-height: 350px;
+  min-height: 380px;
   width: 100%;
   height: 100%;
+}
+
+.field {
+  margin-bottom: 30px;
 }
 
 .header1 {
@@ -1401,6 +1650,7 @@ body {
   text-transform: uppercase;
   position: relative;
   letter-spacing: 2px;
+  padding: 15px 0;
 }
 
 .card1 {
@@ -1496,6 +1746,10 @@ body {
   }
   &-link {
     padding-top: 75px;
+    & a:hover {
+      text-decoration: none;
+      color: $lightviolet;
+    }
   }
   &__subtitle {
     color: #fff;
@@ -1506,6 +1760,10 @@ body {
     text-transform: capitalize;
     position: relative;
     z-index: 2;
+    &:hover {
+      text-decoration: none;
+      color: $lightviolet;
+    }
   }
 }
 
@@ -1516,5 +1774,8 @@ body {
     color: #fff;
     margin-left: 36px;
     font-size: 26px;
+    &:hover {
+      color: $lightviolet;
+    }
   }
 }
