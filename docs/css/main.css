@@ -8346,7 +8346,8 @@ body {
   position: relative;
   max-width: 235px;
   left: 65px;
-  z-index: 2; }
+  z-index: 2;
+  box-shadow: 5px 5px 5px 5px #111820; }
   @media (max-width: 1500px) {
     .app-store {
       left: 0; } }
@@ -8416,7 +8417,8 @@ body {
   position: relative;
   max-width: 235px;
   margin-left: 44px;
-  z-index: 2; }
+  z-index: 2;
+  box-shadow: 5px 5px 5px 5px #111820; }
   .google-play:hover {
     opacity: .8; }
   .google-play::after {
@@ -9039,8 +9041,8 @@ body {
   height: 100%; }
 
 .header1 {
-  background-color: #F5F5F5;
-  color: #c1c1c1;
+  background-color: #9071e9;
+  color: #fff;
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
@@ -9049,4 +9051,91 @@ body {
 
 .card1 {
   z-index: 2;
-  border-radius: 10px; }
+  border-radius: 10px;
+  overflow: hidden; }
+
+.btn-sbm {
+  background-color: #9071e9; }
+
+.download {
+  background-color: #0a0e34;
+  padding: 228px 0 12px;
+  position: relative;
+  z-index: 1; }
+  .download::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .1;
+    background-image: url(../img/stadium.jpg);
+    background-position: -170px -5px;
+    background-size: 111% 115%;
+    background-repeat: no-repeat;
+    z-index: -1; }
+  .download__wrapper {
+    margin-left: 22px;
+    padding-bottom: 150px; }
+  .download__content {
+    text-transform: uppercase;
+    position: relative;
+    left: -2px;
+    top: -3px; }
+    .download__content--line {
+      position: absolute;
+      top: -10.5%;
+      left: 3.4%;
+      height: 157px;
+      width: 138px; }
+    .download__content--line2 {
+      position: absolute;
+      top: -63%;
+      left: 48%;
+      height: 314px;
+      width: 275px; }
+    .download__content--title {
+      color: #fff;
+      font-size: 90px;
+      font-weight: 700;
+      margin-bottom: 0;
+      letter-spacing: 4.3px;
+      position: relative;
+      z-index: 1; }
+    .download__content--subtitle {
+      color: #a496ca;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top: -12px;
+      position: relative;
+      z-index: 1; }
+
+.footer {
+  background-color: rgba(10, 14, 52, 0.6);
+  position: relative;
+  z-index: 2;
+  margin-top: 195px;
+  padding-bottom: 40px; }
+  .footer__logo {
+    padding-top: 70px;
+    margin-left: 50px; }
+  .footer-link {
+    padding-top: 75px; }
+  .footer__subtitle {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 50px;
+    text-transform: capitalize;
+    position: relative;
+    z-index: 2; }
+
+.socials {
+  margin-top: 67px;
+  margin-left: -128px; }
+  .socials__link {
+    color: #fff;
+    margin-left: 36px;
+    font-size: 26px; }

@@ -191,7 +191,7 @@ body {
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-delay: 0s;
-  
+  // position: fixed;
   
 }
 
@@ -379,6 +379,7 @@ body {
   max-width: 235px;
   left: 65px;
   z-index: 2;
+  box-shadow: 5px 5px 5px 5px #111820;
     @media (max-width: 1500px) {
       left: 0;
     };
@@ -452,6 +453,7 @@ body {
   max-width: 235px;
   margin-left: 44px;
   z-index: 2;
+  box-shadow: 5px 5px 5px 5px #111820;
   &:hover {
     opacity: .8;
   }
@@ -903,10 +905,6 @@ body {
 
 //Section Enjoy
 
-.enjoy {
-
-}
-
 .active {
   position: relative;
   &__img {
@@ -1141,6 +1139,7 @@ body {
 // Section Contact
 
 .contact {
+  // display: none;
   padding-top: 100px;
   font-size: 18px;
   padding-bottom: 100px;
@@ -1171,8 +1170,8 @@ body {
 }
 
 .header1 {
-  background-color: #F5F5F5;
-  color: #c1c1c1;
+  background-color: $lightviolet;
+  color: #fff;
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1183,4 +1182,109 @@ body {
 .card1 {
   z-index: 2;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.btn-sbm {
+  background-color: $lightviolet;
+}
+
+// Section Download
+
+.download {
+  background-color: #0a0e34;
+  padding: 228px 0 0;
+  position: relative;
+  z-index: 1;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: .1;
+        background-image: url(../img/stadium.jpg);
+        background-position: -170px -5px;
+        background-size: 111% 115%;
+        background-repeat: no-repeat;
+        z-index: -1;
+      }
+  &__wrapper {
+    margin-left: 22px;
+    padding-bottom: 150px;
+  }
+  &__content {
+    text-transform: uppercase;
+    position: relative;
+    left: -2px;
+    top: -3px;
+    &--line {
+      position: absolute;
+      top: -10.5%;
+      left: 3.4%;
+      height: 157px;
+      width: 138px;
+    }
+    &--line2 {
+      position: absolute;
+      top: -63%;
+    left: 48%;
+      height: 314px;
+      width: 275px;
+    }
+    &--title {
+      color: #fff;
+      font-size: 90px;
+      font-weight: 700;
+      margin-bottom: 0;
+      letter-spacing: 4.3px;
+      position: relative;
+      z-index: 1;
+    }
+    &--subtitle {
+      color: #a496ca;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top: -12px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+.footer {
+  background-color: rgba($color: #0a0e34, $alpha: 0.6);
+  position: relative;
+  z-index: 2;
+  margin-top: 195px;
+  padding-bottom: 40px;
+  &__logo {
+    padding-top: 70px;
+    margin-left: 50px;
+  }
+  &-link {
+    padding-top: 75px;
+  }
+  &__subtitle {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 50px;
+    // padding-top: 70px;
+    text-transform: capitalize;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.socials {
+  margin-top: 67px;
+  margin-left: -128px;
+  &__link {
+    color: #fff;
+    margin-left: 36px;
+    font-size: 26px;
+  }
 }
