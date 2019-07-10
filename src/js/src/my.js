@@ -174,3 +174,57 @@ $("html, body").scroll(function () {
 
 });
 
+! function () {
+  "use strict";
+  var e;
+  window.addEventListener("load", function () {
+      e = new google.maps.Map(document.getElementById("map"), {
+          center: {
+              lat: 38.907467,
+              lng: -77.059163
+          },
+          zoom: 15,
+          disableDefaultUI: !0,
+          styles: [
+            {
+              "featureType": "administrative.land_parcel",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.locality",
+              "elementType": "geometry.fill",
+              "stylers": [
+                {
+                  "weight": 1
+                }
+              ]
+            },
+            {
+              "featureType": "road.local",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            }
+          ]
+      }), new google.maps.Marker({
+          position: {
+              lat: 38.907467,
+              lng: -77.059163
+          },
+          map: e,
+          draggable: true,
+          animation: google.maps.Animation.BOUNCE,
+          icon: "./img/marker.png"
+      })
+  
+})
+}();
+
