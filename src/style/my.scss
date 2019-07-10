@@ -1,0 +1,1142 @@
+body {
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+}
+
+// Header
+
+.header {
+    position: absolute;
+    width: 100%;
+    min-height: 50px;
+    z-index: 2;
+    &-subtitle {
+        position: relative;
+        // right: 10.1%;
+        margin-top: 62px;
+        margin-right: 195px;
+        letter-spacing: 0.75px;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: white;
+        opacity: .8;
+            @media (max-width: 1500px) {
+                margin-right: 15px;
+            };
+    }
+}
+
+
+
+// Logo
+
+.logo {
+  padding-top: 52px;
+  margin-left: 193px;
+        @media (max-width: 1500px) {
+            margin-left: 15px;
+        };    
+}
+
+
+// Menu
+
+.close {
+  z-index: -1 !important;
+  opacity: 0;
+  transition: 0.3s ease-out;
+  // display: none;
+}
+
+.overflow {
+  padding: 0;
+  margin:  0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+//fonts
+$ngfont : 'Karla', sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+//functions & mixins
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$z-indexes: ( 
+"model-menu",
+"hamburger-open",
+);
+
+@function z($name) {
+    @if index($z-indexes,
+    $name) {
+        @return (length($z-indexes) - index($z-indexes, $name))+1;
+    }
+    @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}
+
+//colors
+$ngwhite : #f5f5f5;
+$ngred : #ff4338;
+$ngblue : #00b3e3;
+$nggreen : #3cd52e;
+$ngblack : #111820;
+$nggrey: #a5a5a5;
+$ngviolet: #9932CC;
+$ngyellow: #cc7722;
+
+body, html {
+  padding: 0;
+  margin:  0;
+  width: 100vw;
+  height: 100vh;
+  // overflow: hidden;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+.close-button {
+  cursor: pointer;
+}
+
+#hamburger-open {
+    z-index: 3;
+    position: absolute;
+    top: 54px;
+    left: 48.5%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+    &:hover {
+        cursor: pointer;
+        opacity: .6;
+    };
+}
+
+.spans {
+  width: 100%;
+  height: 10%;
+  background-color: $ngwhite;
+  border-radius: 500px;
+  opacity: 1;
+  transition-property: background-color, transform, opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+  &:hover {
+    cursor: pointer;
+    // background-color: $lightviolet;
+    opacity: .8;
+    
+};
+}
+
+.white {
+  background-color: $ngwhite;
+  transition-duration: 0.5s;
+  transition-delay: none;
+}
+
+.spanOneRotate {
+  transform: translateY(9px) rotate(-45deg);
+  transition-property: background-color, transform;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.spanTwoRotate {
+  transform: rotate(45deg);
+  transition-property: background-color, transform;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.spanThreeHide {
+ transition-property: background-color, opacity;
+ opacity: 0;
+ transition-duration: 0.5s;
+ transition-delay: 0.5s;
+}
+
+.modal-menu {
+  @include centerer;
+  z-index: z('model-menu');
+  // z-index: 5;
+  width: 50vw;
+  height: auto;
+  // height: 0;
+  // display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0;
+  // visibility: hidden;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  
+  
+}
+
+.menuitem {
+  position: relative;
+  font-family: $ngfont;
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: $nggrey;
+  height: 75px;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0;
+}
+
+
+.menuitem:after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   top: 45%;
+   left: -6px;
+   background-color: $ngblack;
+   height: 1px;
+   z-index: -1;
+   transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.menuitem:nth-of-type(1):hover:after {
+   background-color: $ngred;
+   transform: scaleY(20) translateY(-60%); 
+}
+
+.menuitem:nth-of-type(2):hover:after {
+   background-color: $nggreen;
+   transform: scaleY(20) translateY(-60%); 
+}
+
+.menuitem:nth-of-type(3):hover:after {
+   background-color: $ngblue;
+   transform: scaleY(20) translateY(-60%); 
+}
+
+.menuitem:nth-of-type(4):hover:after {
+   background-color: $ngred;
+   transform: scaleY(20) translateY(-60%); 
+}
+
+.menuitem:nth-of-type(5):hover:after {
+    background-color: $ngviolet;
+    transform: scaleY(20) translateY(-60%); 
+ }
+
+ .menuitem:nth-of-type(6):hover:after {
+    background-color: $ngyellow;
+    transform: scaleY(20) translateY(-60%); 
+ }
+.menuitem:hover {
+    color: $ngwhite;
+    cursor: pointer;
+}
+
+.show {
+  // opacity: 1;
+  // height: 100%;
+  // display: flex;
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-delay: 1s;
+  }
+
+  .container {
+      max-width: 1530px !important;
+        @media (max-width: 1570px) {
+            max-width: 1140px !important;
+        };
+  }
+
+  // Section Home
+
+  .left {
+    transform: translateX(-200%);
+    // left: -100%;
+  }
+
+  #home {
+    background-color: #0a0e34;
+      padding: 373px 0 108px;
+      position: relative;
+      // height: 100vh;
+      // z-index: 1;
+      & a {
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+          border-bottom-color: #00b3e3;
+        }
+        &:focus {
+          box-shadow: 2px 2px 2px #00b3e3;
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: .1;
+        background-image: url(../img/football.jpg);
+        background-position: 0px -46px;
+        z-index: 1;
+      }
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    transition: 0.5s ease-out;
+    & .home__line {
+      position: absolute;
+      top: -80.5%;
+      left: 58.5%;
+      z-index: 1;
+    }
+  }
+
+  .home {
+        &__title {
+            text-transform: uppercase;
+            color: #fff;
+            font-family: 'Proxima Nova';
+            font-size: 90px;
+            font-weight: bold;
+            letter-spacing: 4.2px;
+            margin-left: -7px;
+            margin-bottom: -16px;
+            position: relative;
+            z-index: 2;
+            &--cont {
+                z-index: 0;
+            }
+            @media (max-width: 1200px) {
+                margin-left: 10px;
+                margin-right: 10px;
+            };
+    
+        }  
+  }
+  .list {
+    position: relative;
+    list-style: none;
+    padding-bottom: 160px;
+    z-index: 2;
+    transition: 0.3s ease-out;
+    &--item {
+        text-transform: uppercase;
+        font-family: 'Proxima Nova';
+        font-weight: 300;
+        margin-left: 58px;
+        letter-spacing: -.34px;
+        margin-right: -12px;
+        margin-top: 13px;
+        @media (max-width: 1500px) {
+            margin-right: 10px;
+        };
+        & a {
+            color: $lightviolet;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.app-store {
+  background-color: $violet;
+  position: relative;
+  max-width: 235px;
+  left: 65px;
+  z-index: 2;
+    @media (max-width: 1500px) {
+      left: 0;
+    };
+    &:hover {
+      opacity: .8;
+    }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    top: 0;
+    left: -39px;
+    border-radius: 50%;
+    background-color: $violet;
+    z-index: -1;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    top: 0;
+    right: -39px;
+    border-radius: 50%;
+    background-color: $violet;  
+    z-index: -1;
+  }
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    left: 7px;
+    & img {
+      width: 30px;
+      margin-top: -5px;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    left: 40px;
+    & p {
+      margin: 0;
+      font-family: 'Proxima Nova';
+      font-weight: 300;
+      font-size: 14px;
+      padding-top: 20px;
+      margin-bottom: -2px;
+      letter-spacing: 0.6px;
+    }
+    & h3 {
+      margin: 0;
+      font-family: 'Proxima Nova';
+      font-weight: 600;
+      font-size: 14px;
+      padding-bottom: 24px;
+    }
+  }
+}
+
+.google-play {
+  background-color: $violet;
+  position: relative;
+  max-width: 235px;
+  margin-left: 44px;
+  z-index: 2;
+  &:hover {
+    opacity: .8;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    top: 0;
+    left: -38px;
+    border-radius: 50%;
+    background-color: $violet;
+    z-index: -1;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    top: 0;
+    right: -38px;
+    border-radius: 50%;
+    background-color: $violet;  
+    z-index: -1;
+  }
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    left: 2px;
+    & img {
+      width: 34px;
+      margin-top: -2px;
+
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    right: 20px;
+    letter-spacing: 0.5px;
+    & p {
+      margin: 0;
+      font-family: 'Proxima Nova';
+      font-weight: 300;
+      font-size: 14px;
+      padding-top: 20px;
+      margin-bottom: -2px;
+    }
+    & h3 {
+      margin: 0;
+      font-family: 'Proxima Nova';
+      font-weight: 600;
+      font-size: 14px;
+      padding-bottom: 22px;
+    }
+  }
+}
+
+
+//Section athletes
+
+.athletes {
+  position: relative;
+  width: 100%;
+  &-img {
+    position: absolute;
+    z-index: 2;
+    top: -1%;
+    left: 14.2%;
+    height: 1105px;
+    width: 725px;
+  }
+  &-line {
+    position: absolute;
+    z-index: 1;
+    top: 4.4%;
+    left: 15.8%;
+    height: 668px;
+    width: 582px;
+  }
+  &-darkplus {
+    position: absolute;
+    z-index: 1;
+    top: 16.5%;
+    left: 21.5%;
+    height: 17px;
+    width: 17px;
+  }
+  &-lightplus {
+    position: absolute;
+    z-index: 1;
+    top: 15.5%;
+    left: 20.4%;
+    height: 17px;
+    width: 17px;
+  }
+  &-wrap {
+    position: relative;
+    left: 50%;
+  }
+  &-art {
+    position: relative;
+    width: 100%;
+  }
+  &-top {
+    background-color: #fff;
+    &__head{
+      color: #e7e7e7;
+      font-size: 90px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-top: 94px;
+      padding-bottom: 53px;
+      margin-left: 50px;
+    }
+    &__conn {
+      color: #c1c1c1;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      margin-left: 80px;
+      letter-spacing: 2px;
+      &::after {
+        content: '01';
+        position: absolute;
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        top: 4px;
+        left: -30px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 6px;
+        background-color: $violet;
+        border-radius: 2px;
+        top: 26px;
+        left: -30px;
+      }
+    }
+    &__text {
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      padding-top: 6px;
+      margin-left: 50px;
+      letter-spacing: 1px;
+      padding-bottom: 56px;
+      margin-bottom: 0;
+    }
+  }
+  &-mid {
+    background-color: #f6f4fa;
+    &__conn {
+      color: #c1c1c1;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      padding-top: 55px;
+      margin-left: 80px;
+      letter-spacing: 2px;
+      &::after {
+        content: '02';
+        position: absolute;
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        top: 59px;
+        left: -31px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $violet;
+        width: 20px;
+        height: 6px;
+        border-radius: 2px;
+        top: 81px;
+        left: -29px;
+      }
+    }
+    &__text {
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      padding-top: 6px;
+      margin-left: 48px;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      padding-bottom: 59px;
+      margin-bottom: 0;
+    }
+  }
+  &-bot {
+    background-color: $violet;
+    &__conn {
+      color: #c1c1c1;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      padding-top: 84px;
+      margin-left: 80px;
+      letter-spacing: 2px;
+        &::after {
+          content: '03';
+          position: absolute;
+          color: #000;
+          font-size: 18px;
+          font-weight: 700;
+          top: 87px;
+          left: -30px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 6px;
+          background-color: #fff;
+          border-radius: 2px;
+          top: 111px;
+          left: -29px;
+        }
+    }
+    &__text {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+      padding-top: 6px;
+      margin-left: 46px;
+      letter-spacing: 1px;
+      padding-bottom: 100px;
+      line-height: 1.4;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+// Section players
+
+.players {
+  position: relative;
+  width: 100%;
+  &-img {
+    position: absolute;
+    z-index: 2;
+    top: -8.3%;
+    left: 41.8%;
+    height: 815px;
+    width: 991px;
+  }
+  &-line {
+    position: absolute;
+    z-index: 1;
+    top: 39.5%;
+    left: 51.4%;
+    height: 321px;
+    width: 279px;
+  }
+  &-line2 {
+    position: absolute;
+    z-index: 1;
+    top: 1.9%;
+    left: 76%;
+    height: 319px;
+    width: 275px;
+  }
+  &-darkplus {
+    position: absolute;
+    z-index: 1;
+    top: 9.9%;
+    left: 57.2%;
+    height: 17px;
+    width: 17px;
+  }
+  &-darkplus2 {
+    position: absolute;
+    z-index: 1;
+    top: 36.9%;
+    left: 82.2%;
+    height: 17px;
+    width: 17px;
+  }
+  &-lightplus {
+    position: absolute;
+    z-index: 1;
+    top: 11.5%;
+    left: 58.45%;
+    height: 17px;
+    width: 17px;
+  }
+  &-wrap {
+    position: relative;
+    left: 14.2%;
+  }
+  &-art {
+    position: relative;
+    width: 100%;
+  }
+  &-top {
+    background-color: #fff;
+    &__head{
+      color: #e7e7e7;
+      font-size: 90px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-top: 91px;
+      padding-bottom: 53px;
+      margin-left: 50px;
+    }
+    &__conn {
+      color: #c1c1c1;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      margin-left: 80px;
+      letter-spacing: 2px;
+      &::after {
+        content: '01';
+        position: absolute;
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        top: 4px;
+        left: -30px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 6px;
+        background-color: $violet;
+        border-radius: 2px;
+        top: 26px;
+        left: -30px;
+      }
+    }
+    &__text {
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      padding-top: 6px;
+      margin-left: 50px;
+      letter-spacing: 1px;
+      padding-bottom: 68px;
+      margin-bottom: 0;
+    }
+  }
+  &-mid {
+    background-color: #f6f4fa;
+    &__conn {
+      color: #c1c1c1;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      padding-top: 55px;
+      margin-left: 80px;
+      letter-spacing: 2px;
+      &::after {
+        content: '02';
+        position: absolute;
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        top: 59px;
+        left: -31px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $violet;
+        width: 20px;
+        height: 6px;
+        border-radius: 2px;
+        top: 81px;
+        left: -29px;
+      }
+    }
+    &__text {
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      padding-top: 17px;
+      margin-left: 48px;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      padding-bottom: 68px;
+      margin-bottom: 0;
+    }
+  }
+  &-bot {
+    background-color: #0a0e34;
+    &__conn {
+      color: #c1c1c1;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      padding-top: 90px;
+      margin-left: 80px;
+      letter-spacing: 2px;
+        &::after {
+          content: '03';
+          position: absolute;
+          color: $violet;
+          font-size: 18px;
+          font-weight: 700;
+          top: 92px;
+          left: -30px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 6px;
+          background-color: #fff;
+          border-radius: 2px;
+          top: 116px;
+          left: -29px;
+        }
+    }
+    &__text {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+      padding-top: 9px;
+      margin-left: 50px;
+      letter-spacing: 1px;
+      padding-bottom: 90px;
+      line-height: 1.4;
+      margin-bottom: 0;
+    }
+  }
+}
+
+//Section Enjoy
+
+.enjoy {
+
+}
+
+.active {
+  position: relative;
+  &__img {
+    background-image: url(../img/bridge-phone.jpg);
+    background-repeat: no-repeat;
+    background-size: 130%;
+    background-position: 77% 10%;
+    min-height: 730px;
+  }
+  &__sq {
+    width: 168px;
+    height: 155px;
+    background-color: $violet;
+    position: absolute;
+    top: 39.4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+      content: '01';
+      position: absolute;
+      color: #f5f6f7;
+      font-size: 24px;
+      font-weight: 700;
+      top: 53px;
+      left: 72px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 2px;
+      top: 89px;
+      left: 74px;
+      opacity: .3;
+    }
+  }
+  &__content {
+    padding-left: 72px;
+    &--title {
+      padding-top: 145px;
+      h2 {
+       color: #c1c1c1;
+       opacity: .4;
+       font-size: 90px;
+       font-weight: 700;
+       text-transform: uppercase;
+       padding-top: 91px;
+       padding-bottom: 53px;
+       margin-left: 50px;
+     }
+    }
+    &--text {
+      color: #000;
+      font-size: 24px;
+      font-weight: normal;
+      position: relative;
+      padding-bottom: 40px;
+      left: 54px;
+    top: 28px;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 5px;
+        background-color: $violet;
+        border-radius: 2px;
+        top: 170px;
+        left: 3px;
+      }
+    }
+  }
+}
+
+.find {
+  position: relative;
+  &__img {
+    background-image: url(../img/coach.jpg);
+    background-size: 138%;
+    background-position: 99% 47%;
+    background-repeat: no-repeat;
+    min-height: 730px;
+  }
+  &__sq {
+    width: 168px;
+    height: 155px;
+    background-color: $violet;
+    position: absolute;
+    top: 39.4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+      content: '02';
+      position: absolute;
+      color: #f5f6f7;
+      font-size: 24px;
+      font-weight: 700;
+      top: 53px;
+      left: 70px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 2px;
+      top: 89px;
+      left: 74px;
+      opacity: .3;
+    }
+  }
+  &__content {
+    padding-left: 135px;
+    &--title {
+      padding-top: 145px;
+      h2 {
+       color: #c1c1c1;
+       opacity: .4;
+       font-size: 90px;
+       font-weight: 700;
+       text-transform: uppercase;
+       padding-top: 91px;
+       padding-bottom: 53px;
+       margin-left: 50px;
+     }
+    }
+    &--text {
+      color: #000;
+      font-size: 24px;
+      font-weight: normal;
+      position: relative;
+      padding-bottom: 40px;
+      left: 55px;
+      top: -13px;
+      letter-spacing: 1.2px;
+      line-height: 1.2;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 5px;
+        background-color: $violet;
+        border-radius: 2px;
+        top: 173px;
+        left: 3px;
+      }
+    }
+  }
+}
+
+.work {
+  position: relative;
+  &__img {
+    background-image: url(../img/team.jpg);
+    background-repeat: no-repeat;
+    background-size: 115%;
+    background-position: 7% 60%;
+    min-height: 730px;
+  }
+  &__sq {
+    width: 168px;
+    height: 155px;
+    background-color: $violet;
+    position: absolute;
+    top: 39.7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+      content: '03';
+      position: absolute;
+      color: #f5f6f7;
+      font-size: 24px;
+      font-weight: 700;
+      top: 55px;
+      left: 70px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 2px;
+      top: 89px;
+      left: 74px;
+      opacity: .3;
+    }
+  }
+  &__content {
+    padding-left: 72px;
+    &--title {
+      padding-top: 145px;
+      h2 {
+       color: #c1c1c1;
+       opacity: .4;
+       font-size: 90px;
+       font-weight: 700;
+       text-transform: uppercase;
+       padding-top: 91px;
+       padding-bottom: 53px;
+       margin-left: 54px;
+     }
+    }
+    &--text {
+      color: #000;
+      font-size: 24px;
+      font-weight: normal;
+      position: relative;
+      padding-bottom: 40px;
+      left: 54px;
+      top: 22px;
+      letter-spacing: 1.2px;
+      line-height: 1.2;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 5px;
+        background-color: $violet;
+        border-radius: 2px;
+        top: 174px;
+        left: 3px;
+      }
+    }
+  }
+}
+
+// Section Contact
+
