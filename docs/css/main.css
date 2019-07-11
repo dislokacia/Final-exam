@@ -9929,6 +9929,9 @@ body {
   z-index: 2;
   border-radius: 10px;
   overflow: hidden; }
+  @media (max-width: 768px) {
+    .card1 {
+      margin-bottom: 30px; } }
 
 .btn-sbm {
   background-color: #9071e9; }

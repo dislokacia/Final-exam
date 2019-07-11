@@ -2096,6 +2096,9 @@ body {
   z-index: 2;
   border-radius: 10px;
   overflow: hidden;
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 }
 
 .btn-sbm {
