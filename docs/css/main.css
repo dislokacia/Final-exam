@@ -8086,7 +8086,7 @@ body {
 
 .close {
   z-index: -1 !important;
-  opacity: 0;
+  opacity: 0 !important;
   transition: 0.3s ease-out; }
 
 .overflow {

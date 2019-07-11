@@ -81,13 +81,13 @@ $( "#hamburger-open" ).click(function() {
     timelineOpen.play();
     spanOne.classList.add("spanOneRotate");
     spanTwo.classList.add("spanTwoRotate");
-    spanThree.classList.add("spanThreeHide");
+    // spanThree.classList.add("spanThreeHide");
     $('#spanThree').addClass('close');
   } else {
     timelineClose.playBackward();
     spanOne.classList.remove("spanOneRotate");
     spanTwo.classList.remove("spanTwoRotate");
-    spanThree.classList.remove("spanThreeHide");
+    // spanThree.classList.remove("spanThreeHide");
     $('#spanThree').removeClass('close');
   }
 
@@ -158,7 +158,8 @@ $( ".menuitem" ).click(function() {
   // $("body, html").toggleClass('overflow');
   spanOne.classList.remove("spanOneRotate");
     spanTwo.classList.remove("spanTwoRotate");
-    spanThree.classList.remove("spanThreeHide");
+    // spanThree.classList.remove("spanThreeHide");
+    $('#spanThree').removeClass('close');
     $(".modal-menu").addClass('z-index-1');
     $(".modal-menu").removeClass('z-index-2');
 });
