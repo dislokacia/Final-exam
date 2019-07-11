@@ -171,7 +171,7 @@ $( ".menuitem" ).click(function() {
       event.preventDefault();
       var e = s(this).attr("href"),
           o = s(e).offset().top + 20;
-      s("html, body").stop().animate({
+      s("document, body").stop().animate({
           scrollTop: o
       }, 1e3, "swing", function () {})
   })
