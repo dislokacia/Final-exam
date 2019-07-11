@@ -18351,6 +18351,7 @@ $("#hamburger-open, .menuitem").click(function () {
   $('.list').toggleClass('close');
   $('.btn-link').toggleClass('close');
   $('.athletes, .players').toggleClass('close');
+  $('.header-subtitle, .logo').toggleClass('close');
   $('.wrapper').toggleClass('left');
   $('body, html').toggleClass('overflow');
 });
