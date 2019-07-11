@@ -231,10 +231,19 @@ $("html, body").scroll(function () {
 $(".slick").slick({
   arrows: false,
   dots: true,
-  appendDots: $('.active'), 
+  appendDots: $('.active-at'), 
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   slide: ".slide"
+});
+$(".slick-pl").slick({
+  arrows: false,
+  dots: true,
+  appendDots: $('.active-pl'), 
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  slide: ".slide-pl"
 });
 
