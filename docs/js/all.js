@@ -18387,7 +18387,7 @@ $(".menuitem").click(function () {
     event.preventDefault();
     var e = s(this).attr("href"),
         o = s(e).offset().top + 20;
-    s("document, body").stop().animate({
+    s("html, body, document").stop().animate({
       scrollTop: o
     }, 1e3, "swing", function () {});
   });
