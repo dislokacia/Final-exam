@@ -96,11 +96,13 @@ $("#hamburger-open").click(function () {
     spanOne.classList.add("spanOneRotate");
     spanTwo.classList.add("spanTwoRotate");
     spanThree.classList.add("spanThreeHide");
+    $('#spanThree').addClass('close');
   } else {
     timelineClose.playBackward();
     spanOne.classList.remove("spanOneRotate");
     spanTwo.classList.remove("spanTwoRotate");
     spanThree.classList.remove("spanThreeHide");
+    $('#spanThree').removeClass('close');
   } // timelineClose.playBackward();
   // $("body, html").toggleClass('overflow');
   // spanOne.classList.remove("spanOneRotate");
