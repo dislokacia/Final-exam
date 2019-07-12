@@ -8289,6 +8289,9 @@ body {
   @media (max-width: 590px) {
     #home {
       padding: 280px 0 0; } }
+  @media (max-width: 500px) {
+    #home {
+      padding: 200px 0 0; } }
   #home a {
     cursor: pointer;
     text-decoration: none; }
@@ -9480,7 +9483,9 @@ body {
         background-size: 180%; } }
     @media (max-width: 500px) {
       .active__img {
-        background-size: 300%; } }
+        background-size: 170%;
+        background-position: 0% 0;
+        background-image: url(../img/bridge-phone-mb.jpg); } }
   .active__sq {
     width: 168px;
     height: 155px;
@@ -9620,7 +9625,9 @@ body {
         background-size: 180%; } }
     @media (max-width: 500px) {
       .find__img {
-        background-size: 300%; } }
+        background-size: 245%;
+        background-position: 0% 0%;
+        background-image: url(../img/coach-mb.jpg); } }
   .find__sq {
     width: 168px;
     height: 155px;
@@ -9771,7 +9778,9 @@ body {
         background-size: 180%; } }
     @media (max-width: 500px) {
       .work__img {
-        background-size: 300%; } }
+        background-size: 245%;
+        background-position: 0% 0%;
+        background-image: url(../img/team-mb.jpg); } }
   .work__sq {
     width: 168px;
     height: 155px;

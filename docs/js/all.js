@@ -18395,16 +18395,19 @@ $(".menuitem").click(function () {
 
 $("html, body").scroll(function () {
   var st = $(this).scrollTop();
+  $(".home__line").css("transform", "translate(0%, " + st / 40 + "%");
   $(".athletes-img").css("transform", "translate(0%, " + st / 300 + "%");
   $(".athletes-line").css("transform", "translate(0%, " + st / 50 + "%");
-  $(".athletes-darkplus").css("transform", "translate(0%, " + st / 20 + "%");
-  $(".athletes-lightplus").css("transform", "translate(0%, " + st / 20 + "%");
+  $(".athletes-darkplus").css("transform", "translate(0%, -" + st / 10 + "%");
+  $(".athletes-lightplus").css("transform", "translate(0%, -" + st / 10 + "%");
   $(".players-img").css("transform", "translate(0%, " + st / 300 + "%");
   $(".players-line").css("transform", "translate(0%, " + st / 40 + "%");
   $(".players-line2").css("transform", "translate(0%, " + st / 20 + "%");
-  $(".players-darkplus").css("transform", "translate(0%, " + st / 20 + "%");
-  $(".players-darkplus2").css("transform", "translate(0%, " + st / 20 + "%");
-  $(".players-lightplus").css("transform", "translate(0%, " + st / 30 + "%");
+  $(".players-darkplus").css("transform", "translate(0%, -" + st / 10 + "%");
+  $(".players-darkplus2").css("transform", "translate(0%, -" + st / 10 + "%");
+  $(".players-lightplus").css("transform", "translate(0%, -" + st / 10 + "%");
+  $(".download__content--line").css("transform", "translate(0%, " + st / 300 + "%");
+  $(".download__content--line2").css("transform", "translate(0%, " + st / 300 + "%");
 });
 !function () {
   "use strict";
