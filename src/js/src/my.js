@@ -170,7 +170,7 @@ $( ".menuitem" ).click(function() {
   $(".modal-menu,.logo__img").on("click", "a", function () {
       event.preventDefault();
       var e = s(this).attr("href"),
-          o = s(e).offset().top + 20;
+          o = s(e).offset().top + 10;
       s("html, body").stop().animate({
           scrollTop: o
       }, 1e3, "swing", function () {})
