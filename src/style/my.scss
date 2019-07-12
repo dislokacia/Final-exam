@@ -30,6 +30,56 @@ body {
 }
 
 
+// football article
+
+.closing {
+  display: none;
+}
+
+.top150 {
+  position: relative;
+  top: -230px;
+}
+
+.football {
+  // display: none;
+  z-index: 2;
+  position: relative;
+  top: -80px;
+  @media (max-width:768px) {
+    top: -230px;
+  }
+  &-socials {
+    margin-left: 0;
+  }
+  & label {
+    color: #fff;
+    font-size: 24px;
+    &:nth-child(even) {
+      margin-right: 26px;
+    }
+    
+  }
+  & input {
+    color: #fff;
+    font-size: 24px;
+    &:empty {
+      background-color: $violet;
+  }
+  }
+  &-logo {
+    width: 400px;
+    @media (max-width:768px) {
+      width: 200px;
+    }
+  }
+}
+#result {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
 
 // Logo
 

@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
+    <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> -->
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./fonts/ProximaNova/stylesheet.css">
     <link rel="stylesheet" href="css/main.min.css">
@@ -54,14 +53,32 @@
                 <h2 class="home__title home__title--cont">play college sports</h2>
                 <div class="col-lg-9 col-md-12">
                     <ul class="list d-flex justify-content-end flex-wrap">
-                        <li class="li closed list--item"><a href="javascript:void(0);">football</a></li>
-                        <li class="li closed list--item"><a href="javascript:void(0);">basketball</a></li>
-                        <li class="li closed list--item"><a href="javascript:void(0);">baseball</a></li>
-                        <li class="li closed list--item"><a href="javascript:void(0);">soccer</a></li>
-                        <li class="li closed list--item"><a href="javascript:void(0);">ice hockey</a></li>
+                        <li class="li closed list--item"><a class="glist--link" href="javascript:void(0);">football</a></li>
+                        <li class="li closed list--item"><a class="glist--link" href="javascript:void(0);">basketball</a></li>
+                        <li class="li closed list--item"><a class="glist--link" href="javascript:void(0);">baseball</a></li>
+                        <li class="li closed list--item"><a class="glist--link" href="javascript:void(0);">soccer</a></li>
+                        <li class="li closed list--item"><a class="glist--link" href="javascript:void(0);">ice hockey</a></li>
                     </ul>
                 </div>
             </div>
+
+            <article class="football closing">
+
+                <div class="ui-widget">
+
+                    <label for="league">Select League: </label>
+                    <input id="league">
+                    <br>
+
+                    <label for="team">Select team: </label>
+                    <input id="team">
+                    <br>
+
+                </div>
+
+                <div id="result"></div>
+            </article>
+
             <div class="row justify-content-center">
                 <div class="col-6 col-lg-3">
                     <a class="btn-link" href="https://theappstore.org/" target="_blank">
@@ -436,6 +453,11 @@
     </section>
 
 
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"></script> -->
     <script src='https://cdn.jsdelivr.net/mojs/0.265.6/mo.min.js'></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDW00wd4VXgnZBcUrO4fmO0oXp0kVHK6g" async defer></script>
     <script src="js/all.min.js"></script>

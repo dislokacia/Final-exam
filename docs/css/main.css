@@ -8077,6 +8077,43 @@ body {
       .header-subtitle {
         display: none; } }
 
+.closing {
+  display: none; }
+
+.top150 {
+  position: relative;
+  top: -230px; }
+
+.football {
+  z-index: 2;
+  position: relative;
+  top: -80px; }
+  @media (max-width: 768px) {
+    .football {
+      top: -230px; } }
+  .football-socials {
+    margin-left: 0; }
+  .football label {
+    color: #fff;
+    font-size: 24px; }
+    .football label:nth-child(even) {
+      margin-right: 26px; }
+  .football input {
+    color: #fff;
+    font-size: 24px; }
+    .football input:empty {
+      background-color: #5e42b0; }
+  .football-logo {
+    width: 400px; }
+    @media (max-width: 768px) {
+      .football-logo {
+        width: 200px; } }
+
+#result {
+  position: relative;
+  z-index: 2;
+  color: #fff; }
+
 .logo {
   padding-top: 52px;
   margin-left: 193px; }

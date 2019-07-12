@@ -18299,7 +18299,99 @@ var cross = spanOne.classList.contains("white"); //timeline with burst and backg
 
 timelineOpen.add(burst1, burst2, openBackground); //timeline with background close
 
-timelineClose.add(openBackground);
+timelineClose.add(openBackground); // football ajax
+
+$(document).ready(function () {
+  var url = 'https://www.thesportsdb.com/api/v1/json/1/all_leagues.php';
+  var urlTeam = 'https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php';
+  var urlData = 'https://www.thesportsdb.com/api/v1/json/1/searchteams.php';
+  var leagues = [];
+  $.ajax({
+    url: url,
+    type: 'GET'
+  }).fail(function () {
+    alert("error");
+  }).done(function (response) {
+    console.log(response);
+    leagues = response.leagues;
+  }).then(function () {
+    var leaguesArray = [];
+
+    for (var i = 0; i < leagues.length; i++) {
+      leaguesArray.push(leagues[i].strLeague);
+    }
+
+    console.log(leaguesArray);
+    $("#league").autocomplete({
+      source: leaguesArray,
+      _renderItem: function _renderItem(ul, item) {
+        return $("<li>").attr(["strLeague", "strLeagueAlternate"], 123).append(item.label).appendTo(ul);
+      },
+      change: function change(event, ui) {
+        // console.log(ui);
+        League();
+      }
+    });
+  });
+  $('#league').change(League); //    $('#datepicker').change(Calc);
+
+  function League() {
+    var newUrl = urlTeam + "?l=" + $('#league').val(); //        var count = $('#count').val();
+
+    $.ajax({
+      url: newUrl,
+      type: 'GET'
+    }).fail(function () {
+      alert("error");
+    }).done(function (response) {
+      console.log(response);
+      teams = response.teams;
+    }).then(function () {
+      var teamsArray = [];
+
+      for (var i = 0; i < teams.length; i++) {
+        teamsArray.push(teams[i].strTeam);
+      }
+
+      console.log(teamsArray);
+      $("#team").autocomplete({
+        source: teamsArray,
+        _renderItem: function _renderItem(ul, item) {
+          return $("<li>").attr(["strTeam", "strTeamShort"], 123).append(item.label).appendTo(ul);
+        },
+        change: function change(event, ui) {
+          // console.log(ui);
+          Team();
+        }
+      });
+    });
+  }
+
+  function Team() {
+    var newUrl2 = urlData + "?t=" + $('#team').val(); //        var count = $('#count').val();
+
+    $.ajax({
+      url: newUrl2,
+      type: 'GET'
+    }).fail(function () {
+      alert("error");
+    }).done(function (response) {
+      console.log(response);
+      team = response.teams;
+    }).then(function () {
+      var buff = '';
+
+      for (var i = 0; i < team.length; i++) {
+        var el = team[i];
+        buff += "\n                      <div class=\"team\">\n                      <div class=\"d-flex justify-content-between align-items-center flex-wrap\">\n                      <h2>".concat(el.strTeam, "</h2>\n                      <img class=\"football-logo\" src=\"").concat(el.strTeamLogo, "\">\n                      </div>\n                          <p>").concat(el.strDescriptionEN, "</p>\n                          \n                          <div class=\"football-socials d-flex flex-wrap socials justify-content-center\">\n                <a href=\"https://").concat(el.strFacebook, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--fb\">\n                    <i class=\"fab fa-facebook-f\"></i>\n                </a>\n                <a href=\"https://").concat(el.strTwitter, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--tw\">\n                    <i class=\"fab fa-twitter\"></i>\n                </a>\n                <a href=\"https://").concat(el.strInstagram, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                    <i class=\"fab fa-instagram\"></i>\n                </a>\n                <a href=\"https://").concat(el.strYoutube, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fab fa-youtube\"></i>\n                </a>\n                <a href=\"https://").concat(el.strWebsite, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fas fa-jedi\"></i>\n                </a>\n            </div>\n                      </div>\n                  ");
+      }
+
+      $('#result').append(buff);
+    });
+  }
+
+  $('#team').change(Team);
+});
 $(document).ready(function () {
   $("#modal-menu").addClass('z-index-1');
 });
@@ -18469,4 +18561,8 @@ $(".slick-pl").slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   slide: ".slide-pl"
+});
+$(".glist--link").click(function () {
+  $(".football").toggleClass('closing');
+  $(".list").toggleClass('top150');
 });
