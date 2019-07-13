@@ -6,6 +6,8 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url(../../node_modules/easy-autocomplete/dist/easy-autocomplete.min.css);
+@import url(../../node_modules/easy-autocomplete/dist/easy-autocomplete.themes.min.css);
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700");
 html {
   line-height: 1.15;
@@ -8055,6 +8057,9 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   font-family: 'Proxima Nova';
   font-weight: 400; }
+
+.easy-autocomplete {
+  width: 100% !important; }
 
 .header {
   position: absolute;

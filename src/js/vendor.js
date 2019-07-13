@@ -1,6 +1,9 @@
 // Импортируем jQuery
 //= ../../node_modules/jquery/dist/jquery.js
 
+// Импортируем easy-autocomplete
+//= ../../node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.min.js
+
 // Импортируем Popper
 //= ../../node_modules/popper.js/dist/umd/popper.js
 

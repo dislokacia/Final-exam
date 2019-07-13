@@ -92,8 +92,8 @@ timelineClose.add(openBackground); // football ajax
 $(document).ready(function () {
   var url = 'https://www.thesportsdb.com/api/v1/json/1/all_leagues.php';
   var urlTeam = 'https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php';
-  var urlData = 'https://www.thesportsdb.com/api/v1/json/1/searchteams.php';
-  var leagues = [];
+  var urlData = 'https://www.thesportsdb.com/api/v1/json/1/searchteams.php'; // let leagues = [];
+
   $.ajax({
     url: url,
     type: 'GET'
@@ -103,23 +103,48 @@ $(document).ready(function () {
     console.log(response);
     leagues = response.leagues;
   }).then(function () {
-    var leaguesArray = [];
-
-    for (var i = 0; i < leagues.length; i++) {
-      leaguesArray.push(leagues[i].strLeague);
-    }
+    // let leaguesArray = [];
+    var leaguesArray = {
+      url: "https://www.thesportsdb.com/api/v1/json/1/all_leagues.php",
+      listLocation: "leagues",
+      getValue: "strLeague",
+      placeholder: "Write the league",
+      list: {
+        maxNumberOfElements: 10,
+        showAnimation: {
+          type: "fade",
+          //normal|slide|fade
+          time: 400,
+          callback: function callback() {}
+        },
+        hideAnimation: {
+          type: "slide",
+          //normal|slide|fade
+          time: 400,
+          callback: function callback() {}
+        },
+        match: {
+          enabled: true
+        }
+      }
+    }; // for (let i = 0; i < leagues.length; i++) {
+    //     leaguesArray.push(leagues[i].strLeague)
+    // }
 
     console.log(leaguesArray);
-    $("#league").autocomplete({
-      source: leaguesArray,
-      _renderItem: function _renderItem(ul, item) {
-        return $("<li>").attr(["strLeague", "strLeagueAlternate"], 123).append(item.label).appendTo(ul);
-      },
-      change: function change(event, ui) {
-        // console.log(ui);
-        League();
-      }
-    });
+    $("#league").easyAutocomplete(leaguesArray); // $("#league").autocomplete({
+    //     source: leaguesArray,
+    //     _renderItem: function (ul, item) {
+    //         return $("<li>")
+    //             .attr(["strLeague", "strLeagueAlternate"], 123)
+    //             .append(item.label)
+    //             .appendTo(ul);
+    //     },
+    //     change: function (event, ui) {
+    //         // console.log(ui);
+    //         League();
+    //     }
+    // });
   });
   $('#league').change(League); //    $('#datepicker').change(Calc);
 
@@ -135,23 +160,50 @@ $(document).ready(function () {
       console.log(response);
       teams = response.teams;
     }).then(function () {
-      var teamsArray = [];
-
-      for (var i = 0; i < teams.length; i++) {
-        teamsArray.push(teams[i].strTeam);
-      }
-
-      console.log(teamsArray);
-      $("#team").autocomplete({
-        source: teamsArray,
-        _renderItem: function _renderItem(ul, item) {
-          return $("<li>").attr(["strTeam", "strTeamShort"], 123).append(item.label).appendTo(ul);
+      // let teamsArray = [];
+      // for (let i = 0; i < teams.length; i++) {
+      //     teamsArray.push(teams[i].strTeam)
+      // }
+      var teamsArray = {
+        url: function url() {
+          return "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php" + "?l=" + $('#league').val();
         },
-        change: function change(event, ui) {
-          // console.log(ui);
-          Team();
+        listLocation: "teams",
+        getValue: "strTeam",
+        placeholder: "Write the team",
+        list: {
+          maxNumberOfElements: 10,
+          showAnimation: {
+            type: "fade",
+            //normal|slide|fade
+            time: 400,
+            callback: function callback() {}
+          },
+          hideAnimation: {
+            type: "slide",
+            //normal|slide|fade
+            time: 400,
+            callback: function callback() {}
+          },
+          match: {
+            enabled: true
+          }
         }
-      });
+      };
+      console.log(teamsArray);
+      $("#team").easyAutocomplete(teamsArray); // $("#team").autocomplete({
+      //     source: teamsArray,
+      //     _renderItem: function (ul, item) {
+      //         return $("<li>")
+      //             .attr(["strTeam", "strTeamShort"], 123)
+      //             .append(item.label)
+      //             .appendTo(ul);
+      //     },
+      //     change: function (event, ui) {
+      //         // console.log(ui);
+      //         Team();
+      //     }
+      // });
     });
   }
 
