@@ -286,7 +286,7 @@ $(document).ready(function () {
               }
               
 
-              $('#result').append(buff);
+              $('#result').html(buff);
 
           })
   }
