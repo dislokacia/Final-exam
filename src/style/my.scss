@@ -5,6 +5,27 @@ body {
 
 .easy-autocomplete {
   width: 100% !important;
+  &-container ul {
+    border: none;
+    & li {
+    font-size: 22px;
+    @media (max-width:768px) {
+      font-size: 16px;
+    }
+  }
+  }
+}
+
+.card-football {
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 5rem;
+  font-size: 18px;
+  @media (max-width:768px) {
+    padding: 1.5rem;
+    font-size: 14px;
+  }
+
 }
 
 // Header
@@ -36,6 +57,10 @@ body {
 
 // football article
 
+.vis-hidden {
+  visibility: hidden;
+}
+
 .closing {
   display: none;
 }
@@ -47,14 +72,14 @@ body {
 
 .football {
   // display: none;
-  z-index: 2;
+  z-index: 3;
   position: relative;
   top: -80px;
   @media (max-width:768px) {
     top: -230px;
   }
   &-socials {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
   & label {
     color: #fff;
@@ -75,6 +100,17 @@ body {
     width: 400px;
     @media (max-width:768px) {
       width: 200px;
+    }
+  }
+  &-stad {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  &-text {
+    @media (max-width:768px) {
+      height: 300px;
+      overflow: scroll;
     }
   }
 }

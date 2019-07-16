@@ -191,25 +191,12 @@ $(document).ready(function () {
         }
       };
       console.log(teamsArray);
-      $("#team").easyAutocomplete(teamsArray); // $("#team").autocomplete({
-      //     source: teamsArray,
-      //     _renderItem: function (ul, item) {
-      //         return $("<li>")
-      //             .attr(["strTeam", "strTeamShort"], 123)
-      //             .append(item.label)
-      //             .appendTo(ul);
-      //     },
-      //     change: function (event, ui) {
-      //         // console.log(ui);
-      //         Team();
-      //     }
-      // });
+      $("#team").easyAutocomplete(teamsArray);
     });
   }
 
   function Team() {
-    var newUrl2 = urlData + "?t=" + $('#team').val(); //        var count = $('#count').val();
-
+    var newUrl2 = urlData + "?t=" + $('#team').val();
     $.ajax({
       url: newUrl2,
       type: 'GET'
@@ -223,7 +210,7 @@ $(document).ready(function () {
 
       for (var i = 0; i < team.length; i++) {
         var el = team[i];
-        buff += "\n                      <div class=\"team\">\n                      <div class=\"d-flex justify-content-between align-items-center flex-wrap\">\n                      <h2>".concat(el.strTeam, "</h2>\n                      <img class=\"football-logo\" src=\"").concat(el.strTeamLogo, "\">\n                      </div>\n                          <p>").concat(el.strDescriptionEN, "</p>\n                          \n                          <div class=\"football-socials d-flex flex-wrap socials justify-content-center\">\n                <a href=\"https://").concat(el.strFacebook, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--fb\">\n                    <i class=\"fab fa-facebook-f\"></i>\n                </a>\n                <a href=\"https://").concat(el.strTwitter, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--tw\">\n                    <i class=\"fab fa-twitter\"></i>\n                </a>\n                <a href=\"https://").concat(el.strInstagram, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                    <i class=\"fab fa-instagram\"></i>\n                </a>\n                <a href=\"https://").concat(el.strYoutube, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fab fa-youtube\"></i>\n                </a>\n                <a href=\"https://").concat(el.strWebsite, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fas fa-jedi\"></i>\n                </a>\n            </div>\n                      </div>\n                  ");
+        buff += "\n                        <div class=\"card card-football text-center\">\n                        <div class=\"card-header\">\n                        <h3 class=\"card-title\">".concat(el.strAlternate, "</h5>\n                        </div>\n                        <div id=\"team\" class=\"card-body football-body\">\n                          <img class=\"football-logo\" src=\"").concat(el.strTeamBadge, "\">\n                          <p class=\"card-text\">The foundation Year - ").concat(el.intFormedYear, "</p>\n                          <p class=\"card-text football-text\">").concat(el.strDescriptionEN, "</p>\n                          <h5 class=\"card-title\">").concat(el.strStadium, "</h5>\n                          <img class=\"football-stad\" src=\"").concat(el.strStadiumThumb, "\">                      \n                          <p class=\"card-text football-text\">").concat(el.strStadiumDescription, "</p>\n                          <p class=\"card-text\">Stadium location - ").concat(el.strStadiumLocation, "</p>\n                          <div class=\"football-socials d-flex flex-wrap socials justify-content-center\">\n                <a href=\"https://").concat(el.strFacebook, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--fb\">\n                    <i class=\"fab fa-facebook-f\"></i>\n                </a>\n                <a href=\"https://").concat(el.strTwitter, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--tw\">\n                    <i class=\"fab fa-twitter\"></i>\n                </a>\n                <a href=\"https://").concat(el.strInstagram, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                    <i class=\"fab fa-instagram\"></i>\n                </a>\n                <a href=\"https://").concat(el.strYoutube, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fab fa-youtube\"></i>\n                </a>\n                <a href=\"https://").concat(el.strWebsite, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fas fa-jedi\"></i>\n                </a>\n            </div>\n                  ");
       }
 
       $('#result').html(buff);
@@ -231,6 +218,9 @@ $(document).ready(function () {
   }
 
   $('#team').change(Team);
+});
+$('.nav-link').click(function () {
+  $('.football-body').toggleClass('vis-hidden');
 });
 $(document).ready(function () {
   $("#modal-menu").addClass('z-index-1');
@@ -261,8 +251,8 @@ $("#hamburger-open").click(function () {
   } // timelineClose.playBackward();
   // $("body, html").toggleClass('overflow');
   // spanOne.classList.remove("spanOneRotate");
-  //   spanTwo.classList.remove("spanTwoRotate");
-  //   spanThree.classList.remove("spanThreeHide");
+  //  spanTwo.classList.remove("spanTwoRotate");
+  //  spanThree.classList.remove("spanThreeHide");
 
 }); // I've overwriten this part
 //click on the hamburger
@@ -291,10 +281,7 @@ $("#hamburger-open").click(function () {
 
 var body = document.querySelector(body);
 var html = document.querySelector(html);
-var menuitem = document.querySelector(".menuitem"); // $(window).load(function(){
-//   $(".modal-menu").addClass('z-index-1');
-//  });
-
+var menuitem = document.querySelector(".menuitem");
 $("#hamburger-open, .menuitem").click(function () {
   $('.list').toggleClass('close');
   $('.btn-link').toggleClass('close');

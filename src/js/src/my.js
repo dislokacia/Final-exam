@@ -218,27 +218,12 @@ $(document).ready(function () {
 
               $("#team").easyAutocomplete(teamsArray);
 
-              // $("#team").autocomplete({
-              //     source: teamsArray,
-              //     _renderItem: function (ul, item) {
-              //         return $("<li>")
-              //             .attr(["strTeam", "strTeamShort"], 123)
-              //             .append(item.label)
-              //             .appendTo(ul);
-              //     },
-              //     change: function (event, ui) {
-              //         // console.log(ui);
-              //         Team();
-              //     }
-              // });
           })
   }
 
   function Team() {
 
       let newUrl2 = urlData + "?t=" + $('#team').val();
-
-      //        var count = $('#count').val();
 
       $.ajax({
               url: newUrl2,
@@ -257,13 +242,18 @@ $(document).ready(function () {
               for (let i = 0; i < team.length; i++) {
                   const el = team[i];
                   buff+= `
-                      <div class="team">
-                      <div class="d-flex justify-content-between align-items-center flex-wrap">
-                      <h2>${el.strTeam}</h2>
-                      <img class="football-logo" src="${el.strTeamLogo}">
-                      </div>
-                          <p>${el.strDescriptionEN}</p>
-                          
+                        <div class="card card-football text-center">
+                        <div class="card-header">
+                        <h3 class="card-title">${el.strAlternate}</h5>
+                        </div>
+                        <div id="team" class="card-body football-body">
+                          <img class="football-logo" src="${el.strTeamBadge}">
+                          <p class="card-text">The foundation Year - ${el.intFormedYear}</p>
+                          <p class="card-text football-text">${el.strDescriptionEN}</p>
+                          <h5 class="card-title">${el.strStadium}</h5>
+                          <img class="football-stad" src="${el.strStadiumThumb}">                      
+                          <p class="card-text football-text">${el.strStadiumDescription}</p>
+                          <p class="card-text">Stadium location - ${el.strStadiumLocation}</p>
                           <div class="football-socials d-flex flex-wrap socials justify-content-center">
                 <a href="https://${el.strFacebook}" target="_blank" class="football-socials__link socials__link socials--fb">
                     <i class="fab fa-facebook-f"></i>
@@ -281,7 +271,6 @@ $(document).ready(function () {
                 <i class="fas fa-jedi"></i>
                 </a>
             </div>
-                      </div>
                   `;
               }
               
@@ -293,8 +282,9 @@ $(document).ready(function () {
    $('#team').change(Team);
 });
 
-
-
+$('.nav-link').click(function(){
+  $('.football-body').toggleClass('vis-hidden');
+})
 
 $(document).ready(function(){ 
   $("#modal-menu").addClass('z-index-1');
@@ -326,8 +316,8 @@ $( "#hamburger-open" ).click(function() {
   // timelineClose.playBackward();
   // $("body, html").toggleClass('overflow');
   // spanOne.classList.remove("spanOneRotate");
-  //   spanTwo.classList.remove("spanTwoRotate");
-  //   spanThree.classList.remove("spanThreeHide");
+  //  spanTwo.classList.remove("spanTwoRotate");
+  //  spanThree.classList.remove("spanThreeHide");
 });
 
 // I've overwriten this part
@@ -363,10 +353,6 @@ $( "#hamburger-open" ).click(function() {
 var body = document.querySelector(body);
 var html = document.querySelector(html);
 var menuitem = document.querySelector(".menuitem");
-
-// $(window).load(function(){
-//   $(".modal-menu").addClass('z-index-1');
-//  });
 
 $( "#hamburger-open, .menuitem" ).click(function() {
   $('.list').toggleClass('close');
@@ -504,3 +490,4 @@ $( ".glist--link" ).click(function() {
   $(".football").toggleClass('closing');
   $(".list").toggleClass('top150');
 });
+          

@@ -8060,6 +8060,23 @@ body {
 
 .easy-autocomplete {
   width: 100% !important; }
+  .easy-autocomplete-container ul {
+    border: none; }
+    .easy-autocomplete-container ul li {
+      font-size: 22px; }
+      @media (max-width: 768px) {
+        .easy-autocomplete-container ul li {
+          font-size: 16px; } }
+
+.card-football {
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 5rem;
+  font-size: 18px; }
+  @media (max-width: 768px) {
+    .card-football {
+      padding: 1.5rem;
+      font-size: 14px; } }
 
 .header {
   position: absolute;
@@ -8082,6 +8099,9 @@ body {
       .header-subtitle {
         display: none; } }
 
+.vis-hidden {
+  visibility: hidden; }
+
 .closing {
   display: none; }
 
@@ -8090,14 +8110,14 @@ body {
   top: -230px; }
 
 .football {
-  z-index: 2;
+  z-index: 3;
   position: relative;
   top: -80px; }
   @media (max-width: 768px) {
     .football {
       top: -230px; } }
   .football-socials {
-    margin-left: 0; }
+    margin-left: 0 !important; }
   .football label {
     color: #fff;
     font-size: 24px; }
@@ -8113,6 +8133,14 @@ body {
     @media (max-width: 768px) {
       .football-logo {
         width: 200px; } }
+  .football-stad {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px; }
+  @media (max-width: 768px) {
+    .football-text {
+      height: 300px;
+      overflow: scroll; } }
 
 #result {
   position: relative;
