@@ -271,6 +271,8 @@ $(document).ready(function () {
                 <i class="fas fa-jedi"></i>
                 </a>
             </div>
+            </div>
+            </div>
                   `;
               }
               
