@@ -8060,13 +8060,15 @@ body {
 
 .easy-autocomplete {
   width: 100% !important; }
-  .easy-autocomplete-container ul {
-    border: none; }
-    .easy-autocomplete-container ul li {
-      font-size: 22px; }
-      @media (max-width: 768px) {
-        .easy-autocomplete-container ul li {
-          font-size: 16px; } }
+  .easy-autocomplete-container {
+    z-index: 3 !important; }
+    .easy-autocomplete-container ul {
+      border: none; }
+      .easy-autocomplete-container ul li {
+        font-size: 22px; }
+        @media (max-width: 768px) {
+          .easy-autocomplete-container ul li {
+            font-size: 16px; } }
 
 .card-football {
   background-color: transparent;

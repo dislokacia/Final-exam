@@ -217,6 +217,11 @@ $(document).ready(function () {
               console.log(teamsArray)
 
               $("#team").easyAutocomplete(teamsArray);
+              $('.eac-item').click(function(){
+                console.log('click');
+              })
+              // $('#team').change(Team);
+              // Team();
 
           })
   }
@@ -244,7 +249,7 @@ $(document).ready(function () {
                   buff+= `
                         <div class="card card-football text-center">
                         <div class="card-header">
-                        <h3 class="card-title">${el.strAlternate}</h5>
+                        <h3 class="card-title">${el.strTeam}</h5>
                         </div>
                         <div id="team" class="card-body football-body">
                           <img class="football-logo" src="${el.strTeamBadge}">
@@ -281,7 +286,15 @@ $(document).ready(function () {
 
           })
   }
-   $('#team').change(Team);
+  // $('#team').change(function(){
+  //   $(this).val();
+
+  //   League();
+  // });
+  $('#team').change(Team);
+  // $('.eac-item').click(function(){
+  //   Team();
+  // })
 });
 
 $('.nav-link').click(function(){
@@ -493,3 +506,10 @@ $( ".glist--link" ).click(function() {
   $(".list").toggleClass('top150');
 });
           
+
+
+
+
+// document.getElementById('team').value;
+
+// $('#team').val();

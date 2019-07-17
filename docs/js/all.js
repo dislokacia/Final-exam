@@ -18416,6 +18416,10 @@ $(document).ready(function () {
       };
       console.log(teamsArray);
       $("#team").easyAutocomplete(teamsArray);
+      $('.eac-item').click(function () {
+        console.log('click');
+      }); // $('#team').change(Team);
+      // Team();
     });
   }
 
@@ -18434,14 +18438,20 @@ $(document).ready(function () {
 
       for (var i = 0; i < team.length; i++) {
         var el = team[i];
-        buff += "\n                        <div class=\"card card-football text-center\">\n                        <div class=\"card-header\">\n                        <h3 class=\"card-title\">".concat(el.strAlternate, "</h5>\n                        </div>\n                        <div id=\"team\" class=\"card-body football-body\">\n                          <img class=\"football-logo\" src=\"").concat(el.strTeamBadge, "\">\n                          <p class=\"card-text\">The foundation Year - ").concat(el.intFormedYear, "</p>\n                          <p class=\"card-text football-text\">").concat(el.strDescriptionEN, "</p>\n                          <h5 class=\"card-title\">").concat(el.strStadium, "</h5>\n                          <img class=\"football-stad\" src=\"").concat(el.strStadiumThumb, "\">                      \n                          <p class=\"card-text football-text\">").concat(el.strStadiumDescription, "</p>\n                          <p class=\"card-text\">Stadium location - ").concat(el.strStadiumLocation, "</p>\n                          <div class=\"football-socials d-flex flex-wrap socials justify-content-center\">\n                <a href=\"https://").concat(el.strFacebook, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--fb\">\n                    <i class=\"fab fa-facebook-f\"></i>\n                </a>\n                <a href=\"https://").concat(el.strTwitter, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--tw\">\n                    <i class=\"fab fa-twitter\"></i>\n                </a>\n                <a href=\"https://").concat(el.strInstagram, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                    <i class=\"fab fa-instagram\"></i>\n                </a>\n                <a href=\"https://").concat(el.strYoutube, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fab fa-youtube\"></i>\n                </a>\n                <a href=\"https://").concat(el.strWebsite, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fas fa-jedi\"></i>\n                </a>\n            </div>\n            </div>\n            </div>\n                  ");
+        buff += "\n                        <div class=\"card card-football text-center\">\n                        <div class=\"card-header\">\n                        <h3 class=\"card-title\">".concat(el.strTeam, "</h5>\n                        </div>\n                        <div id=\"team\" class=\"card-body football-body\">\n                          <img class=\"football-logo\" src=\"").concat(el.strTeamBadge, "\">\n                          <p class=\"card-text\">The foundation Year - ").concat(el.intFormedYear, "</p>\n                          <p class=\"card-text football-text\">").concat(el.strDescriptionEN, "</p>\n                          <h5 class=\"card-title\">").concat(el.strStadium, "</h5>\n                          <img class=\"football-stad\" src=\"").concat(el.strStadiumThumb, "\">                      \n                          <p class=\"card-text football-text\">").concat(el.strStadiumDescription, "</p>\n                          <p class=\"card-text\">Stadium location - ").concat(el.strStadiumLocation, "</p>\n                          <div class=\"football-socials d-flex flex-wrap socials justify-content-center\">\n                <a href=\"https://").concat(el.strFacebook, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--fb\">\n                    <i class=\"fab fa-facebook-f\"></i>\n                </a>\n                <a href=\"https://").concat(el.strTwitter, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--tw\">\n                    <i class=\"fab fa-twitter\"></i>\n                </a>\n                <a href=\"https://").concat(el.strInstagram, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                    <i class=\"fab fa-instagram\"></i>\n                </a>\n                <a href=\"https://").concat(el.strYoutube, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fab fa-youtube\"></i>\n                </a>\n                <a href=\"https://").concat(el.strWebsite, "\" target=\"_blank\" class=\"football-socials__link socials__link socials--insta\">\n                <i class=\"fas fa-jedi\"></i>\n                </a>\n            </div>\n            </div>\n            </div>\n                  ");
       }
 
       $('#result').html(buff);
     });
-  }
+  } // $('#team').change(function(){
+  //   $(this).val();
+  //   League();
+  // });
 
-  $('#team').change(Team);
+
+  $('#team').change(Team); // $('.eac-item').click(function(){
+  //   Team();
+  // })
 });
 $('.nav-link').click(function () {
   $('.football-body').toggleClass('vis-hidden');
@@ -18616,4 +18626,5 @@ $(".slick-pl").slick({
 $(".glist--link").click(function () {
   $(".football").toggleClass('closing');
   $(".list").toggleClass('top150');
-});
+}); // document.getElementById('team').value;
+// $('#team').val();
